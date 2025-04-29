@@ -1,0 +1,16 @@
+
+CREATE TABLE estados(
+id INT PRIMARY KEY AUTO_INCREMENT,
+nome_estado VARCHAR(100) NOT NULL);
+
+CREATE TABLE cidades(
+id INT PRIMARY KEY AUTO_INCREMENT,
+nome_cidade VARCHAR(100) NOT NULL,
+estado_id INT,
+FOREIGN KEY (estado_id) REFERENCES estados(id));
+
+INSERT INTO estados(nome_estado) VALUES
+('São Paulo');
+
+INSERT INTO cidades(nome_cidade, estado_id) VALUES
+('São Paulo', 1), ('CAmpinas', 1), ('Santos', 1),('Sorocaba', 1),('São Jose dos Campos', 1);
